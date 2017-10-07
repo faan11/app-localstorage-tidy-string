@@ -24,7 +24,7 @@
 
         </style>
           <app-localstorage-tidy-string  key="test" data="{{test}}" default-value="{{default}}"></app-localstorage-tidy-string>
-          <h2 on-click="_changeValue">Test {{test.number}} Click here to increase</h2>
+          <h2 on-click="_changeValue">Test {{test}} Click here to increase</h2>
       </template>
 
       <script>
@@ -33,19 +33,17 @@
           is: 'app-localstorage-tidy-string-demo',
           properties:{
             default:{
-              type:Object,
-              value:function(){
-                return {number:8};
-              }
+              type:String,
+              value:"8"
             },
             test:{
-              type:Number,
+              type:String,
               notify:true
             },
 
           },
           _changeValue:function(){
-            this.set("test.number",this.test.number + 1);
+            this.set("test",parseInt(this.test) + 1);
           }
         });
       })
