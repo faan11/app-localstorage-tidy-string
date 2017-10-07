@@ -1,6 +1,6 @@
 {
-  "name": "app-localstorage-tidy",
-  "main": "app-localstorage-tidy.html",
+  "name": "app-localstorage-tidy-string",
+  "main": "app-localstorage-tidy-string.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"
   },

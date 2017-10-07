@@ -4,36 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>app-localstorage-tidy test</title>
+    <title>app-localstorage-tidy-string test</title>
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
-    <link rel="import" href="../app-localstorage-tidy.html">
+    <link rel="import" href="../app-localstorage-tidy-string.html">
   </head>
   <body>
 
     <test-fixture id="BasicTestFixture">
       <template>
-        <app-localstorage-tidy></app-localstorage-tidy>
+        <app-localstorage-tidy-string></app-localstorage-tidy-string>
       </template>
     </test-fixture>
 
     <test-fixture id="ChangedPropertyTestFixture">
       <template>
-        <app-localstorage-tidy prop1="new-prop1"></app-localstorage-tidy>
+        <app-localstorage-tidy-string prop1="new-prop1"></app-localstorage-tidy-string>
       </template>
     </test-fixture>
 
     <script>
-      suite('app-localstorage-tidy', () => {
+      suite('app-localstorage-tidy-string', () => {
 
         test('instantiating the element with default properties works', () => {
           const element = fixture('BasicTestFixture');
-          assert.equal(element.prop1, 'app-localstorage-tidy');
+          assert.equal(element.prop1, 'app-localstorage-tidy-string');
           const elementShadowRoot = element.shadowRoot;
           const elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello app-localstorage-tidy!');
+          assert.equal(elementHeader.innerHTML, 'Hello app-localstorage-tidy-string!');
         });
 
         test('setting a property on the element works', () => {

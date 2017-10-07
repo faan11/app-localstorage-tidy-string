@@ -1,20 +1,20 @@
 <link rel="import" href="../polymer/polymer-element.html">
 
-<dom-module id="app-localstorage-tidy">
+<dom-module id="app-localstorage-tidy-string">
   <template>
   </template>
 
   <script>
     /**
      *
-     * <app-localstorage-tidy> writes and reads using localStorage api.
+     * <app-localstorage-tidy-string> writes and reads using localStorage api.
      *
      * @customElement
      * @polymer
      * @demo demo/index.html
      */
     class AppLocalstorageTidy extends Polymer.Element {
-      static get is() { return 'app-localstorage-tidy'; }
+      static get is() { return 'app-localstorage-tidy-string'; }
       static get properties() {
         return {
           /** The key value  */
@@ -24,7 +24,7 @@
           },
           /** the data that can be read/write */
           data: {
-            type: Object,
+            type: String,
             notify:true
           },
           /** the initial value */
@@ -54,7 +54,7 @@
           return;
         }
         /* set default value */
-        window.localStorage.setItem(this.key,JSON.stringify(data));
+        window.localStorage.setItem(this.key,data);
       }
       _changeKey(key){
         /* avoid strange cases */
@@ -63,10 +63,10 @@
         }
         /* fetch data */
         try{
-          this.data = JSON.parse(window.localStorage.getItem(key));
+          this.data = window.localStorage.getItem(key);
         }catch(e){
           /*Undefined? take default value. */
-          this.data = this.defaultValue;
+
           return;
         }
 
@@ -74,13 +74,10 @@
       }
       /** Force Data to be read */
       updateData(){
-        try{
-          /* read data */
-          this.data = JSON.parse(window.localStorage.getItem(this.key));
-        }catch(e){
-          /* Default value */
+        /* read data */
+        this.data = JSON.parse(window.localStorage.getItem(this.key));
+        if (this.data == undefined){
           this.data = this.defaultValue;
-          return;
         }
 
       }

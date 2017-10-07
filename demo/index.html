@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>app-localstorage-tidy demo</title>
+    <title>app-localstorage-tidy-string demo</title>
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../app-localstorage-tidy.html">
+    <link rel="import" href="../app-localstorage-tidy-string.html">
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
@@ -18,19 +18,19 @@
     </custom-style>
   </head>
   <body unresolved>
-    <dom-module id="app-localstorage-tidy-demo">
+    <dom-module id="app-localstorage-tidy-string-demo">
       <template>
         <style>
 
         </style>
-          <app-localstorage-tidy  key="test" data="{{test}}" default-value="{{default}}"></app-localstorage-tidy>
+          <app-localstorage-tidy-string  key="test" data="{{test}}" default-value="{{default}}"></app-localstorage-tidy-string>
           <h2 on-click="_changeValue">Test {{test.number}} Click here to increase</h2>
       </template>
 
       <script>
       window.addEventListener('WebComponentsReady', function() {
         Polymer({
-          is: 'app-localstorage-tidy-demo',
+          is: 'app-localstorage-tidy-string-demo',
           properties:{
             default:{
               type:Object,
@@ -51,7 +51,7 @@
       })
     </script>
   </dom-module>
-  <app-localstorage-tidy-demo></app-localstorage-tidy-demo>
+  <app-localstorage-tidy-string-demo></app-localstorage-tidy-string-demo>
     <!--<div class="vertical-section-container centered">
       <h3>Basic app-localstorage-document demo</h3>
       <demo-snippet>
